@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Micahel A. Hobley, Victor A. Prisacariu">
+  <meta name="generator" content="Jekyll v4.1.1">
+
+  <title>Multi-Class Few-Shot Counting Dataset</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <main role="main" class="container">
+
+    <div class="title" style="text-align:center;">
+      <h1>MCAC: A Multi-Class Class-Agnostic Counting Dataset
+      </h1>
+    </div>
+
+    <div class="col text-center">
+      <p class="authors">
+        <a href="https://scholar.google.co.uk/citations?user=2EftbyIAAAAJ&amp;hl=en">Michael A. Hobley</a>,
+        <a href="http://www.robots.ox.ac.uk/~victor/">Victor A. Prisacariu</a><br>
+        University of Oxford
+      </p>
+    </div>
+
+    <div class="col text-center">
+      <a class="btn btn-secondary" href="https://arxiv.org/abs/2309.04820" role="button">Paper</a>
+      <a class="btn btn-secondary" href="https://www.robots.ox.ac.uk/~lav/Datasets/MCAC/MCAC.zip"
+        role="button">Download</a>
+      <a class="btn btn-secondary" href="https://github.com/ActiveVisionLab/ABC123" role="button">Method</a>
+    </div>
+
+    <br>
+
+
+    <h2>MCAC </h2>
+    <div style="text-align:center;">
+      <img src="./multi_class_files/MCAC_example.png" style="width:100%">
+      <b>MCAC Example</b>. Each object in the RGB image has an associated: Model ID, Class ID, Center Coordinate,
+      Bounding Box and Occlusion
+      Percentage.
+      <p>
+        More examples can be seen <a href="MCAC_examples.html"> here.</a>
+      </p>
+
+    </div>
+    <br>
+    <div style="text-align:left;">
+      MCAC is the first multi-class class-agnostic counting dataset. each image contains between 1 and 4 classes of
+      object and between 1 and 300 objects per class.
+      The classes of objects present in the Train, Test and Val splits are mutually exclusive, and where possible
+      aligned with the class splits in <a href="https://github.com/ActiveVisionLab/LearningToCountAnything">
+        FSC-133</a>.
+      <br>
+      Each object is labeled with an instance, class and model number as well as its center coordinate, bounding box
+      coordinates and its percentage occlusion
+      <br>
+      Models are taken from <a href="https://shapenet.org/"> ShapeNetSem</a>. The original model IDs and manually
+      verified category labels are preserved.
+      <br>
+      MCAC-M1 is the single-class images from MCAC. This is useful when comparing methods that are not suited to
+      multi-class cases.
+    </div>
+    <br>
+
+    <h2>Statistic </h2>
+
+    <table class="tg" cellpadding="10">
+      </tr>
+      <thead>
+        <tr style="border-top:1px solid black">
+          <td align="center">
+            </th>
+          <td align="center">
+            </th>
+          <td align="center">
+            </th>
+          <td align="center" colspan="4" style="border-bottom:1px solid black">Count Values</th>
+          <td align="center">    </td>
+          <td align="center" colspan="4" style="border-bottom:1px solid black">Num Classes</th>
+        </tr>
+      </thead>
+      <tr style="border-bottom:1px solid black">
+        <td align="center"></td>
+        <td align="center">#</td>
+        <td align="center">Classes</td>
+        <td align="center">Min</td>
+        <td align="center">Median</td>
+        <td align="center">Mean</td>
+        <td align="center">Max</td>
+        <td align="center">    </td>
+        <td align="center">Min</td>
+        <td align="center">Median</td>
+        <td align="center">Mean</td>
+        <td align="center">Max</td>
+      </tr>
+      <tr>
+        <td align="left"><b>MCAC</b></td>
+      </tr>
+      <tr>
+        <td align="center">Train</td>
+        <td align="center">8298</td>
+        <td align="center">287</td>
+        <td align="center">1</td>
+        <td align="center">23</td>
+        <td align="center">46.87</td>
+        <td align="center">298</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">1.75</td>
+        <td align="center">4</td>
+      </tr>
+      <tr>
+        <td align="center">Val</td>
+        <td align="center">4286</td>
+        <td align="center">37</td>
+        <td align="center">1</td>
+        <td align="center">24</td>
+        <td align="center">46.52</td>
+        <td align="center">297</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">1.78</td>
+        <td align="center">4</td>
+      </tr>
+      <tr>
+        <td align="center">Test</td>
+        <td align="center">3640</td>
+        <td align="center">19</td>
+        <td align="center">1</td>
+        <td align="center">25</td>
+        <td align="center">50.80</td>
+        <td align="center">296</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">1.72</td>
+        <td align="center">4</td>
+      </tr>
+      <tr style="border-bottom:1px solid black">
+        <td align="center">Total</td>
+        <td align="center">16224</td>
+        <td align="center">343</td>
+        <td align="center">1</td>
+        <td align="center">23</td>
+        <td align="center">47.66</td>
+        <td align="center">298</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">1.75</td>
+        <td align="center">4</td>
+      </tr>
+      </tr>
+      <tr>
+        <td align="left"><b>MCAC-M1</b></td>
+      </tr>
+      <tr>
+        <td align="center">Train</td>
+        <td align="center">2186</td>
+        <td align="center">287</td>
+        <td align="center">5</td>
+        <td align="center">102</td>
+        <td align="center">112.42</td>
+        <td align="center">298</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+      </tr>
+      <tr>
+        <td align="center">Val</td>
+        <td align="center">1060</td>
+        <td align="center">37</td>
+        <td align="center">3</td>
+        <td align="center">96</td>
+        <td align="center">110.56</td>
+        <td align="center">297</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+      </tr>
+      <tr>
+        <td align="center">Test</td>
+        <td align="center">1013</td>
+        <td align="center">19</td>
+        <td align="center">1</td>
+        <td align="center">117</td>
+        <td align="center">124.89</td>
+        <td align="center">291</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+      </tr>
+      <tr style="border-bottom:1px solid black">
+        <td align="center">Total</td>
+        <td align="center">4259</td>
+        <td align="center">343</td>
+        <td align="center">1</td>
+        <td align="center">102</td>
+        <td align="center">114.89</td>
+        <td align="center">298</td>
+        <td align="center">    </td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td align="center">1</td>
+      </tr>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+
+    <h2>Benchmark Results</h2>
+
+    <table class="tg" cellpadding="10">
+      </tr>
+      <thead>
+        <tr style="border-top:1px solid black">
+          <td align="center">
+            </th>
+          <td align="center">
+            </th>
+          <td align="center" colspan="4" style="border-bottom:1px solid black">Val</th>
+          <td align="center">    </td>
+          <td align="center" colspan="4" style="border-bottom:1px solid black">Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid black">
+          <td align="center">Method</td>
+          <td align="center">Shots</td>
+          <td align="center">MAE</td>
+          <td align="center">RMSE</td>
+          <td align="center">NAE</td>
+          <td align="center">SRE</td>
+          <td align="center">    </td>
+          <td align="center">MAE</td>
+          <td align="center">RMSE</td>
+          <td align="center">NAE</td>
+          <td align="center">SRE</td>
+        </tr>
+
+        <tr>
+          <td align="left">Mean</td>
+          <td align="center">N/A</td>
+          <td align="center"> 39.87 </td>
+          <td align="center"> 53.56 </td>
+          <td align="center"> 3.07 </td>
+          <td align="center"> 11.40 </td>
+          <td align="center">    </td>
+          <td align="center"> 42.67 </td>
+          <td align="center"> 59.68 </td>
+          <td align="center"> 2.79 </td>
+          <td align="center"> 10.93 </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black">
+          <td align="left">Median</td>
+          <td align="center">N/A</td>
+          <td align="center">36.25 </td>
+          <td align="center"> 58.15 </td>
+          <td align="center"> 1.51 </td>
+          <td align="center"> 6.70 </td>
+          <td align="center">    </td>
+          <td align="center"> 39.81 </td>
+          <td align="center"> 65.36 </td>
+          <td align="center"> 1.38 </td>
+          <td align="center"> 6.73</td>
+        </tr>
+        <tr>
+          <td align="left"><a href="https://arxiv.org/pdf/2104.08391.pdf">FamNet</a></td>
+          <td align="center">3</td>
+          <td align="center"> 24.76 </td>
+          <td align="center"> 41.12 </td>
+          <td align="center"> 1.12 </td>
+          <td align="center"> 6.86 </td>
+          <td align="center">    </td>
+          <td align="center"> 26.40 </td>
+          <td align="center"> 45.52 </td>
+          <td align="center"> 1.04 </td>
+          <td align="center"> 6.87 </td>
+        </tr>
+
+        <tr>
+          <td align="left"><a href="https://arxiv.org/abs/2203.08354.pdf">BMNet</a></td>
+          <td align="center">3</td>
+          <td align="center"> 15.83 </td>
+          <td align="center"> 27.07 </td>
+          <td align="center"> 0.71 </td>
+          <td align="center"> 4.97 </td>
+          <td align="center">    </td>
+          <td align="center"> 17.29 </td>
+          <td align="center"> 29.83 </td>
+          <td align="center"> 0.75 </td>
+          <td align="center"> 6.08 </td>
+        </tr>
+        <tr>
+
+          <td align="left"><a href="https://arxiv.org/abs/2208.13721">CounTR</a></td>
+          <td align="center">3</td>
+          <td align="center"> 15.07 </td>
+          <td align="center"> 26.26 </td>
+          <td align="center"> 0.63 </td>
+          <td align="center"> 4.79 </td>
+          <td align="center">    </td>
+          <td align="center"> 16.12 </td>
+          <td align="center"> 29.28 </td>
+          <td align="center"> 0.67 </td>
+          <td align="center"> 5.71 </td>
+
+        </tr>
+        <tr style="border-bottom:1px solid black">
+          <td align="left"><a href="https://arxiv.org/abs/2309.04820">ABC123</a></td>
+          <td align="center"> 0 </td>
+          <td align="center"> <b>8.96</b> </td>
+          <td align="center"> <b>15.93</b> </td>
+          <td align="center"> <b>0.29</b> </td>
+          <td align="center"> <b>2.02</b> </td>
+          <td align="center">    </td>
+          <td align="center"> <b>9.52</b> </td>
+          <td align="center"> <b>17.64</b> </td>
+          <td align="center"> <b>0.28</b> </td>
+          <td align="center"> <b>2.23</b> </td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <h2>File hierarchy</h2>
+    <pre>
+    ├── dataset_pytorch.py
+    ├── make_gaussian_maps.py
+    ├── test
+    ├── train
+    │   ├── 1511489148409439
+    │   ├── 3527550462177290
+    │   |   ├──img.png
+    │   |   ├──info.json
+    │   |   ├──seg.png
+    │   ├──4109417696451021
+    │   └── ...
+    └── val
+  </pre>
+
+    <h2>Precomputing Denisty-Maps</h2>
+    <div style="text-align:left;">
+      To precompute Gaussian density maps of a different resolution or standard deviation run the following. </div>
+
+    <br>
+    <pre>
+    cd PATH/TO/MCAC/
+    python make_gaussian_maps.py  --occulsion_limit <desired_max_occlusion>  --crop_size 672 --img_size <desired_resolution> --gauss_constant <desired_gaussian_std>;
+  </pre>
+
+
+    <h2 style="margin-top:0.75cm;">Citation</h2>
+    <pre>    @article{hobley2023abc,
+        title={ABC Easy as 123: A Blind Counter for Exemplar-Free Multi-Class Class-agnostic Counting},
+        author={Hobley, Michael and Prisacariu, Victor},
+        journal={arXiv preprint arXiv:2309.04820},
+        year={2023}}
+    </pre>
+
+  </main>
+
+</body>
+
+</html>
