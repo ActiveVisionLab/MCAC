@@ -28,6 +28,21 @@ multi-class cases.
 
 Dowload MCAC [here](https://www.robots.ox.ac.uk/~lav/Datasets/MCAC/MCAC.zip).
 
+File Hierarchy:
+
+    ├── dataset_pytorch.py
+    ├── make_gaussian_maps.py
+    ├── test
+    ├── train
+    │   ├── 1511489148409439
+    │   ├── 3527550462177290
+    │   |   ├──img.png
+    │   |   ├──info.json
+    │   |   ├──seg.png
+    │   ├──4109417696451021
+    │   └── ...
+    └── val
+  
 ## Precompute Density Maps 
 To precompute ground truth density maps for other resolutions, occlusion percentages, and gaussian standard deviations:
 
