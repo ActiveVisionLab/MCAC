@@ -1,0 +1,47 @@
+---
+
+
+dataset:
+  savename: "shapenetsem_009"
+  split: arg_spec
+  dataset: shapenetsem
+  dataset_path: "PATH/ShapeNetSem_models-OBJ/models"
+  types_split_path: "datasplits/shapenetsem_train_test_val.json"
+  types_id_class: "datasplits/shapenetsem_id_class_dict.json"
+  file_type: _fixed2.GLTF
+
+
+
+rendering:
+  render_individual_segmentation: True
+  image_renderer: cycles # eevee
+
+objects:
+  min_num_countables: 3
+  max_num_countables: 4
+  min_number_per_type: 5
+  max_number_per_type: 300
+
+  min_size: 0.5
+  max_size: 1.5
+
+
+
+simulation:
+  start_frame: 0
+  end_frame: 75
+
+scene:
+  colour_depth: 16
+  camera:
+        location:
+                z: 26.5 
+  lights:
+        min_number: 1
+        max_number: 4
+
+        cycles_global_min_total: 150 #if there isnt one >= to this then bump it up
+        cycles_min_energy: 50
+        cycles_max_energy: 500
+
+

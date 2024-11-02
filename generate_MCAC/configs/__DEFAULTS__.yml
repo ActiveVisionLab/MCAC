@@ -1,0 +1,97 @@
+---
+dataset:
+  savename: ""
+  split: test # train test val or arg_spec, if arg_spec then --split mucst be used, this auto sets the correct save folder
+  types_split_path: "datasplits/primitives_train_test.json"
+  types_id_class: ""
+  dataset: primitives
+  dataset_path: ""
+  file_type: .obj
+
+
+
+rendering:
+  resolution: 
+              x: 1080
+              y: 1080
+
+  render_output_image: True
+  image_renderer: cycles # eevee
+
+  output_video: False
+
+  find_Vertex_collisions: False
+
+  render_segmentation: True
+
+  render_individual_segmentation: False
+
+  eevee_image_samples: 1
+  cycles_samples: 1
+  cycles_denoise: True
+  indv_seg_samples: 1
+
+simulation:
+  start_frame: 0
+  end_frame: 500
+
+objects:
+  min_num_countables: 2
+  max_num_countables: 2
+  ensure_different_geometries: False
+
+  min_number_per_type: 5
+  max_number_per_type: 50
+  
+
+  
+
+  object_min_colours: [0,0,0] # pick a colour between this and the max, used to have seperate train and test colour spaces
+  object_max_colours: [1,1,1]
+  in_image_colour_range: -1 # if this is not one pick all objects in an image to be within this range (forces all classes to be similar colours)
+
+  min_location_x: None #if none place within the box dimensions
+  max_location_x: None #if none place within the box dimensions
+  min_location_y: None #if none place within the box dimensions
+  max_location_y: None #if none place within the box dimensions
+
+  min_size: 0.75 # max nominal class object size
+  max_size: 1 # max nominal class object size
+  size_variation: 0.25 # variation within a class size (smallest is 1-x biggest is 1+x)
+
+  min_angle: 0
+  max_angle: 360
+
+  randomly_move_vertexs: False
+  randomly_move_vertexs_amount: 0.1
+
+scene:
+  colour_depth: 8
+
+  camera:
+        location:
+                x: 0
+                y: 0
+                z: 16.5
+  lights:
+        min_number: 4
+        max_number: 4
+
+        cycles_global_min_total: 150 #if there isnt one >= to this then bump it up
+        cycles_min_energy: 1000
+        cycles_max_energy: 1001
+
+        eevee_global_min_total: 400 #if there isnt one >= to this then bump it up
+        eevee_min_energy: 400
+        eevee_max_energy: 402
+        height: 8
+
+  maximally_different_colours: False
+  floor_size: 12
+
+
+  floor_min_colours: [0.0, 0.0, 0.0]
+  floor_max_colours: [1, 1, 1.0]
+
+  randomly_move_floor_vertexs: False
+  randomly_move_floor_vertexs_amount: 1
