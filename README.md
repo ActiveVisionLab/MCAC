@@ -51,6 +51,10 @@ cd PATH/TO/MCAC/
 python make_gaussian_maps.py  --occulsion_limit <desired_max_occlusion>  --crop_size 672 --img_size <desired_resolution> --gauss_constant <desired_gaussian_std>;
 ```
 
+## Evaluation Bounding Boxes
+For fair evaluation of methods which require exemplar bounding boxes we suggest using the 3 least occluded instances (lowest index breaking ties).
+For ease of use, we have provided the indexs for all of these for the validation and training splits.
+
 ## Citation
 ```
 @article{hobley2023abc,
